@@ -22,19 +22,23 @@ From nodejs:
 
     var Datamatrix = require('tualo-datamatrix').Datamatrix;
     var dm = new Datamatrix();
-    var ascii = dm.getDigit('http://tualo.de',false);
+    var ascii = dm.getDigit('http://tualo.de',{rectangular:false,addFNC1:false});
     console.log(ascii);
+    var ascii2 = dm.getDigit('http://tualo.de',{rectangular:false,addFNC1:true});
+    console.log(ascii2);
 
 In a Browser:
 
     <script src="lib/datamatrix.js" type="text/javascript"></script>
     <script type="text/javascript">
         var dm = new Datamatrix();
-        var ascii = dm.getDigit('http://tualo.de',false);
+        var ascii = dm.getDigit('http://tualo.de',{rectangular:false,addFNC1:false});
         console.log(ascii);
+        var ascii2 = dm.getDigit('http://tualo.de',{rectangular:false,addFNC1:true});
+        console.log(ascii2);
     </script>
 
-The output will be:
+The output will be with addFNC1 = false:
 
     00000000000000000000
     01010101010101010100
@@ -57,3 +61,25 @@ The output will be:
     01111111111111111110
     00000000000000000000
 
+The output will be with addFNC1 = true:
+
+    00000000000000000000
+    01010101010101010100
+    01011011100111110010
+    01101011011100110100
+    01001110010001001110
+    01100001101101101000
+    01011101101000000010
+    01001110000001100000
+    01100101001100110110
+    01001101010001010000
+    01011100110101100110
+    01110111011100010100
+    01101101110101110010
+    01011100010111001100
+    01001010100001010010
+    01110000001011001000
+    01100100010000111010
+    01011100111010101100
+    01111111111111111110
+    00000000000000000000

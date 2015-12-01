@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="lib/datamatrix.js" type="text/javascript"></script>
+    
+</head>
+<body>
+<script type="text/javascript">
+        var dm = new Datamatrix();
+        var ascii = dm.getDigit('http://tualo.de',{rectangular:false});
+        console.log(ascii);
+        var ascii2 = dm.getDigit('http://tualo.de',{rectangular:false,addFNC1:false});
+        console.log(ascii2);
+        console.log(ascii === ascii2);
+        var ascii3 = dm.getDigit('http://tualo.de',{rectangular:false,addFNC1:true});
+        console.log(ascii3);
+        console.log(ascii2 !== ascii3);
+    </script>
+</body>
+</html>
