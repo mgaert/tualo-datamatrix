@@ -36,6 +36,13 @@ In a Browser:
         console.log(ascii);
         var ascii2 = dm.getDigit('http://tualo.de',{rectangular:false,addFNC1:true});
         console.log(ascii2);
+        
+        var ascii3 = dm.getDigit('http://tualo.de',{
+          rectangular:false,
+          addFNC1:false,
+          length:144 // DataMatrix 44x44
+        });
+        console.log(ascii3);
     </script>
 
 The output will be with addFNC1 = false:
